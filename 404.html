@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tech Glossary Hub</title>
+  <script>
+    // GitHub Pages SPA redirect handler for multi-level base path
+    // Handles path: /techGlossary.github.io/angular/directives
+    // Redirects to: /techGlossary.github.io/?/angular/directives
+    var pathSegmentsToKeep = 2; // Keep both 'techGlossary.github.io' segments
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+</body>
+</html>
